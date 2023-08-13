@@ -7,12 +7,11 @@ services:
       EULA: "TRUE"
       GAMEMODE: survival
       DIFFICULTY: normal
+      ALLOW_LIST: "true"
     ports:
       - 19132:19132/udp
     volumes:
-      - bds:/data
+      - ./data:/data
+      - ./allowlist.json:/allowlist.json
     stdin_open: true
     tty: true
-
-volumes:
-  bds: {}
