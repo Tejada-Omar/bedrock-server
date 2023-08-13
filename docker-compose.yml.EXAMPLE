@@ -14,6 +14,7 @@ services:
       ALLOW_LIST: "true"
       VIEW_DISTANCE: 32
       TEXTUREPACK-REQUIRED: "true"
+      OPS: "9999999999999999"
       # SERVER_AUTHORITATIVE_MOVEMENT: "client-auth"
     ports:
       - 19132:19132/udp
