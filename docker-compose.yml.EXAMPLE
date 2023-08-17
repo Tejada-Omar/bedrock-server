@@ -2,8 +2,9 @@ version: 'LATEST'
 
 services:
   bds:
-    # image: itzg/minecraft-bedrock-server
-    build: https://github.com/itzg/docker-minecraft-bedrock-server.git
+    image: itzg/minecraft-bedrock-server
+    # build: https://github.com/itzg/docker-minecraft-bedrock-server.git
+    platform: linux/amd64
     restart: unless-stopped
     environment:
       SERVER_NAME: "Elmo's Figgum"
@@ -14,7 +15,7 @@ services:
       PLAYER_IDLE_TIMEOUT: 60
       ALLOW_LIST: "true"
       VIEW_DISTANCE: 32
-      TEXTUREPACK-REQUIRED: "true"
+      # TEXTUREPACK-REQUIRED: "true"
       OPS: "9999999999999999"
       # SERVER_AUTHORITATIVE_MOVEMENT: "client-auth"
     ports:
