@@ -4,6 +4,7 @@ services:
   bds:
     image: itzg/minecraft-bedrock-server
     # build: https://github.com/itzg/docker-minecraft-bedrock-server.git
+    container_name: bedrock_server
     platform: linux/amd64
     restart: unless-stopped
     environment:
@@ -21,7 +22,23 @@ services:
     ports:
       - 19132:19132/udp
     volumes:
-      - ./data:/data
       - ./allowlist.json:/allowlist.json
+      - bds:/data
     stdin_open: true
     tty: true
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    container_name: bedrock_backup
+    restart: always
+    depends_on:
+      - "bedrock_server"
+    environment:
+      TZ: "Canada/Mountain"
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/bedrock/backups:/backups
+      - bds:/server
+
+volumes:
+  bds: {}

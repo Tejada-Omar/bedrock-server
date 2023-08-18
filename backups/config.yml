@@ -1,0 +1,13 @@
+containers:
+  bedrock:
+    - name: bedrock_server
+      worlds:
+        - /server/worlds/Bedrock-01
+schedule:
+  interval: 3h
+  startupDelay: 2min
+  onLastLogout: true
+trim:
+  trimDays: 3
+  keepDays: 20
+  minKeep: 3
