@@ -14,7 +14,7 @@ services:
       GAMEMODE: survival
       DIFFICULTY: normal
       PLAYER_IDLE_TIMEOUT: 60
-      ALLOW_LIST: "true"
+      # ALLOW_LIST: "true"
       VIEW_DISTANCE: 32
       # TEXTUREPACK-REQUIRED: "true"
       OPS: "9999999999999999"
@@ -22,8 +22,8 @@ services:
     ports:
       - 19132:19132/udp
     volumes:
-      - ./allowlist.json:/allowlist.json
       - bds:/data
+      # - ./allowlist.json:/allowlist.json
     stdin_open: true
     tty: true
   backup:
