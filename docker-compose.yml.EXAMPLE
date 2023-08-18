@@ -15,7 +15,7 @@ services:
       DIFFICULTY: normal
       PLAYER_IDLE_TIMEOUT: 60
       # ALLOW_LIST: "true"
-      VIEW_DISTANCE: 32
+      VIEW_DISTANCE: 24
       # TEXTUREPACK-REQUIRED: "true"
       OPS: "9999999999999999"
       # SERVER_AUTHORITATIVE_MOVEMENT: "client-auth"
